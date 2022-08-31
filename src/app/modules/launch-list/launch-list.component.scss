@@ -1,3 +1,6 @@
-div {
-    padding: 10px;
+.launch-grid {
+    padding-top: var(--space-large);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: var(--space-medium);
 }
