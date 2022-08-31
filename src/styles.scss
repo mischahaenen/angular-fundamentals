@@ -10,6 +10,8 @@ body {
     --color-white: #fff;
     --color-grey: #efefef;
     --color-black: #000000;
+    --color-success: #00b300;
+    --color-error: #ff0000;
     --space-small: 1rem;
     --space-medium: 2rem;
     --space-large: 4rem;
@@ -43,8 +45,6 @@ a {
 
 img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .label {
