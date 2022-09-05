@@ -22,4 +22,8 @@ export class LaunchService {
             },
         })
     }
+
+    getLaunch(selectedId: string): Observable<Launch> {
+        return this.http.get<Launch>(LaunchService.baseUrl + 'launches/' + selectedId)
+    }
 }

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 
 import { LaunchService } from './launch.service'
@@ -6,7 +7,7 @@ describe('LaunchService', () => {
     let service: LaunchService
 
     beforeEach(() => {
-        TestBed.configureTestingModule({})
+        TestBed.configureTestingModule({ imports: [HttpClientModule] })
         service = TestBed.inject(LaunchService)
     })
 

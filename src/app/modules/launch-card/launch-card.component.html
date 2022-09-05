@@ -1,4 +1,4 @@
-<div *ngIf="launch" class="card" [routerLink]="['/launch', launch.id]">
+<div *ngIf="launch" class="card" [routerLink]="['/launches', launch.id]">
     <img
         class="card-img-top"
         [src]="launch.links.flickr.original[0] || '../../../assets/img/space-fallback.png'"

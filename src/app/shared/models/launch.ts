@@ -32,7 +32,11 @@ export interface Launch {
     window: string
     rocket: string
     success: boolean
-    failures: string[]
+    failures: {
+        time: number
+        altitude: number
+        reason: string
+    }[]
     details: string
     crew: string[]
     ships: string[]

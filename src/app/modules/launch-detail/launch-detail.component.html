@@ -1,0 +1,42 @@
+<div *ngIf="launch$ | async as launch">
+    <div class="header">
+        <div>
+            <h1>{{ launch.name }}</h1>
+            <p>{{ launch.details }}</p>
+        </div>
+        <iframe class="video-section" [src]="launch.links.webcast | safe: 'resourceUrl'"></iframe>
+    </div>
+    <div class="container">
+        <h2>Details</h2>
+        <div class="detail">
+            <div class="detail__title">Flight Number</div>
+            <div class="detail__value">{{ launch.flight_number }}</div>
+        </div>
+        <div class="detail">
+            <div class="detail__title">Launch Date</div>
+            <div class="detail__value">{{ launch.date_local | date: 'medium' }}</div>
+        </div>
+        <div class="detail">
+            <div class="detail__title">Launch Success</div>
+            <div class="detail__value">{{ launch.success }}</div>
+        </div>
+        <div *ngIf="!launch.success">
+            <div class="detail">
+                <div class="detail__title">Failure Reason</div>
+                <div *ngFor="let failure of launch.failures" class="detail__value">
+                    {{ failure.reason }}
+                    {{ failure.time | date: 'medium' }}
+                    {{ failure.altitude }}
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>Article</div>
+            <div>{{ launch.links.article }}</div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Rocket</h2>
+        <p>{{ launch.rocket }}</p>
+    </div>
+</div>

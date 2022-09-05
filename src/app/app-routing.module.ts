@@ -7,6 +7,11 @@ const routes: Routes = [
         path: 'launches',
         loadComponent: () => import('./modules/launch-list/launch-list.component').then((m) => m.LaunchListComponent),
     },
+    {
+        path: 'launches/:id',
+        loadComponent: () =>
+            import('./modules/launch-detail/launch-detail.component').then((m) => m.LaunchDetailComponent),
+    },
 ]
 
 @NgModule({

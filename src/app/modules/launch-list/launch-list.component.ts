@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { LaunchService } from 'src/app/core/services/launch.service'
-import { map, Observable, of } from 'rxjs'
+import { delay, map, Observable, of, retry } from 'rxjs'
 import { Launch } from 'src/app/shared/models/launch'
 import { LaunchCardComponent } from '../launch-card/launch-card.component'
 
@@ -18,6 +18,11 @@ export class LaunchListComponent implements OnInit {
     constructor(private readonly launchService: LaunchService) {}
 
     ngOnInit() {
-        this.launches$ = this.launchService.getLaunches().pipe(map((res) => res.docs))
+        // SpaceX Data API is rate limited to 50 requests per second
+        this.launches$ = this.launchService.getLaunches().pipe(
+            retry(3),
+            delay(2000),
+            map((res) => res.docs)
+        )
     }
 }
