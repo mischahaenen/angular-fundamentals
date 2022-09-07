@@ -42,19 +42,4 @@
         width: 100%;
         margin-bottom: var(--space-small);
     }
-
-    .success-icon {
-        width: 24px;
-        height: 24px;
-        fill: var(--color-white);
-        background-color: var(--color-success);
-        border-radius: 50%;
-    }
-    .error-icon {
-        width: 24px;
-        height: 24px;
-        fill: var(--color-white);
-        background-color: var(--color-error);
-        border-radius: 50%;
-    }
 }

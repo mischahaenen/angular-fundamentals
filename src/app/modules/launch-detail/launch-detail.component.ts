@@ -5,11 +5,12 @@ import { delay, Observable, of, retry, switchMap } from 'rxjs'
 import { LaunchService } from 'src/app/core/services/launch.service'
 import { Launch } from 'src/app/shared/models/launch'
 import { SafePipe } from 'src/app/shared/pipes/safe.pipe'
+import { SuccessIndicatorComponent } from 'src/app/shared/components/success-indicator/success-indicator.component'
 
 @Component({
     selector: 'app-launch-detail',
     standalone: true,
-    imports: [CommonModule, SafePipe],
+    imports: [CommonModule, SafePipe, SuccessIndicatorComponent],
     templateUrl: './launch-detail.component.html',
     styleUrls: ['./launch-detail.component.scss'],
 })
